@@ -3,5 +3,8 @@
 <p> Done: <%= @task.completed %> </p>
 
 <%= link_to 'RETURN HOME', tasks_path %>
-<%= link_to 'DELETE TASK', tasks_path %>
-<%= link_to 'EDIT TASK', tasks_path %>
+<%= link_to 'DELETE TASK',
+    task_destroy_path(@task),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+<%= link_to 'EDIT TASK',task_edit_path(@task)%>
