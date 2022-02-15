@@ -1,10 +1,11 @@
-<h1> <%= @task.title  %>:, </h1>
-<p> <%= @task.details %> </p>
-<p> Done: <%= @task.completed %> </p>
+<h1>Task name: <%= @task.title %></h1>
+<p>Details: <%= @task.details %> </p>
+<p>Completed? <%= @task.completed %> </p>
+<br>
 
-<%= link_to 'RETURN HOME', tasks_path %>
-<%= link_to 'DELETE TASK',
-    task_destroy_path(@task),
+<button type="button" class="btn btn-secondary"><%= link_to 'RETURN HOME', tasks_path %></button>
+<button type="button" class="btn btn-secondary"><%= link_to 'DELETE TASK',
+    task_path(@task),
     method: :delete,
-    data: { confirm: "Are you sure?" } %>
-<%= link_to 'EDIT TASK',task_edit_path(@task)%>
+    data: { confirm: "Are you sure?" } %></button>
+<button type="button" class="btn btn-secondary"><%= link_to 'EDIT TASK',edit_task_path(@task)%></button>
